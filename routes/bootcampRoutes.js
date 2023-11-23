@@ -16,7 +16,7 @@ router.get('/', async (req , res) =>{
     //seleccionar todos los bootcamps
     //bootcamps en la coleccion
 
-    try {s
+    try {
         const bootcamps =
         await bootcampModel.find()
 
@@ -53,9 +53,7 @@ router.get('/:id', async (req , res) => {
         })
     }
     //seleccionar el botcamp por id
-    selected_bootcamp = await bootcampModel.
-                    findById(bootcampid)
-   
+    selected_bootcamp = await bootcampModel.findById(bootcampid)
     if(selected_bootcamp){
         //se encontro el bootcamp
           //enviar respuesta
@@ -70,10 +68,8 @@ router.get('/:id', async (req , res) => {
             msg: `no se encontro el bootcamp ${bootcampid}`
         })
     }
- 
-
-    }   catch (error){
-        res.status(error.status).json(
+}   catch (error){
+        res.status(500).json(
             {
                 success: false,
                 msg: error.message
@@ -88,11 +84,107 @@ router.get('/:id', async (req , res) => {
 
 //crear bootcamp
 router.post('/', async(req , res ) => {
-    const newBootcamp = await bootcampModel.create(req.body)
-    res.json({
-        success:true,
-        result: newBootcamp
-    })
+    try {
+        const newBootcamp = await bootcampModel.create(req.body)
+        res.status(201).json({
+            success:true,
+            result: newBootcamp
+        })
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            msg: error.message
+        })
+    }
+   
+})
+
+router.put('/:id', async (req,res) =>{
+
+    try{
+
+        //recoger el parametro id de la url
+   bootcampid =  req.params.id
+   //validar el id suministrado
+   if(!mongoose.Types.ObjectId.isValid(bootcampid)){
+       res.status(400).json({
+           success: false,
+           msg: "el id no es valido"
+       })
+   }
+   //seleccionar el botcamp por id
+   selected_bootcamp = await bootcampModel.
+                                    findById(bootcampid,
+                                        req.body,
+                                            {
+                                                new:true
+                                            })
+   if(selected_bootcamp){
+       //se encontro el bootcamp
+         //enviar respuesta
+   res.status(200).json({
+           success : true,
+           results: selected_bootcamp
+       })
+   }else{
+       //no se encontro el bootcamp
+   res.status(400).json({
+           success: false,
+           msg: `no se encontro el bootcamp ${bootcampid}`
+       })
+   }
+}   catch (error){
+       res.status(500).json(
+           {
+               success: false,
+               msg: error.message
+         
+           })
+   }
+})
+
+
+router.delete("/:id" , async(req , res)=>{
+    try{
+
+        //recoger el parametro id de la url
+   bootcampid =  req.params.id
+   //validar el id suministrado
+   if(!mongoose.Types.ObjectId.isValid(bootcampid)){
+       res.status(400).json({
+           success: false,
+           msg: "el id no es valido"
+       })
+   }
+   //seleccionar el botcamp por id
+   selected_bootcamp = await bootcampModel.
+                                    findByIdAndDelete(bootcampid,
+                                        req.body,
+                                            {
+                                                new:true
+                                            })
+   if(selected_bootcamp){
+       //se encontro el bootcamp
+         //enviar respuesta
+   res.status(200).json({
+           success : true,
+           results: selected_bootcamp
+       })
+   }else{
+       //no se encontro el bootcamp
+   res.status(400).json({
+           success: false,
+           msg: `no se encontro el bootcamp ${bootcampid}`
+       })
+   }
+}   catch (error){
+       res.status(500).json(
+           {
+               success: false,
+               msg: error.message
+         
+           })
+   }
 })
 
 //exportar rutas

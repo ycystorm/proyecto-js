@@ -19,6 +19,7 @@ conectarDB()
 
 //dependencias de rutas
 const bootcampsRoutes = require('./routes/bootcampRoutes')
+const cursosRoutes = require('./routes/cursosRoutes')
 
 //crear el objeto express
 const app = express()
@@ -28,6 +29,7 @@ app.use(express.json())
 
 //estavlecer rutas del projecto
 app.use('/api/v1/bootcamps',bootcampsRoutes )
+app.use('/api/v1/courses',cursosRoutes )
 
 //crar el servidor de aplicaciones 
 

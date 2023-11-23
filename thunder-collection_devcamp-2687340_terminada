@@ -1,0 +1,225 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "devcamp-2687340",
+    "dateExported": "2023-11-23T05:18:21.844Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "a06efca0-f485-4765-953c-b4c335279daa",
+            "name": "bootcamps",
+            "containerId": "",
+            "created": "2023-11-23T02:23:26.540Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "e1248c03-1983-4332-a376-1e083a3ec72c",
+            "name": "courses",
+            "containerId": "",
+            "created": "2023-11-23T02:24:14.449Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "f57bc9f4-c5b2-426e-9d5d-e8f87bad6a6a",
+            "name": "reviews",
+            "containerId": "",
+            "created": "2023-11-23T02:24:24.505Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "4e6c4115-f28e-4549-9743-ee2be48f736d",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "a06efca0-f485-4765-953c-b4c335279daa",
+            "name": "todos los-bootcamps",
+            "url": "http://127.0.0.1:5000/api/v1/devcamp/bootcamps",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-23T02:06:23.322Z",
+            "modified": "2023-11-23T02:06:23.322Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d7d39c0e-58d2-4301-9044-4d8e3098dfeb",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "a06efca0-f485-4765-953c-b4c335279daa",
+            "name": "traer bootcamp por id",
+            "url": "http://127.0.0.1:6000/api/v1/bootcamps/655eb3f78a9a15d307fd216",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-23T02:06:23.323Z",
+            "modified": "2023-11-23T02:11:41.138Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4a80e4d0-00cc-4c3d-8a02-7fdce290a4fc",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "a06efca0-f485-4765-953c-b4c335279daa",
+            "name": "crear bootcamp",
+            "url": "http://127.0.0.1:6000/api/v1/courses",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-23T02:06:23.324Z",
+            "modified": "2023-11-23T04:43:29.330Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n   \"title\":\"casa\",\n    \"description\":\"123456\",\n    \"weeks\":\"\",\n    \"enroll_cost\":\"52\",\n    \"tminimum_skill\":\"Beginner\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0469ff5f-7eb2-4556-832d-6cc6d29eae4c",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "a06efca0-f485-4765-953c-b4c335279daa",
+            "name": "actualizar bootcamp",
+            "url": "http://127.0.0.1:6000/api/v1/bootcamps/655ec0ca16b69601a7056e55",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-23T02:06:23.325Z",
+            "modified": "2023-11-23T03:26:49.119Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"address\": \"Sena Calle 55\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "56788ddd-f503-492b-af40-61b2388575ef",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "a06efca0-f485-4765-953c-b4c335279daa",
+            "name": "crear usuario",
+            "url": "http://127.0.0.1:5000/api/v1/devcamp/users",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-11-23T02:06:23.326Z",
+            "modified": "2023-11-23T02:06:23.326Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d245b457-81e0-4fa0-8d5b-5e8519ca6391",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "a06efca0-f485-4765-953c-b4c335279daa",
+            "name": "consultar usuario",
+            "url": "http://127.0.0.1:5000/api/v1/devcamp/users/5",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-11-23T02:06:23.327Z",
+            "modified": "2023-11-23T02:06:23.327Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "923c3f08-d8a8-430b-8a5d-cd570c21ef23",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "a06efca0-f485-4765-953c-b4c335279daa",
+            "name": "eliminar usuario",
+            "url": "http://127.0.0.1:6000/api/v1/bootcamps/655ec714df9db2183a94fb43",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2023-11-23T02:06:23.328Z",
+            "modified": "2023-11-23T04:11:05.573Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "66688941-ad24-44ec-a3a2-d865e80ca7b7",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "e1248c03-1983-4332-a376-1e083a3ec72c",
+            "name": "crear curso",
+            "url": "http://127.0.0.1:6000/api/v1/courses",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-11-23T04:36:40.308Z",
+            "modified": "2023-11-23T05:15:36.954Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n   \"title\":\"casa el dorado pipo pepe\",\n    \"description\":\"papel dorado\",\n    \"weeks\":12,\n    \"enroll_cost\":123456789,\n    \"tminimum_skill\":[\n                \"Beginner\"]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5ea74956-4d3b-4893-96eb-45e318efc17c",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "e1248c03-1983-4332-a376-1e083a3ec72c",
+            "name": "eliminar curso",
+            "url": "http://127.0.0.1:6000/api/v1/courses/655ede73581c57e28ca60fb8",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2023-11-23T04:55:43.249Z",
+            "modified": "2023-11-23T05:10:08.418Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fdd7b481-eaec-4bd7-b2cc-c167888f1f77",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "e1248c03-1983-4332-a376-1e083a3ec72c",
+            "name": "consultar curso",
+            "url": "http://127.0.0.1:6000/api/v1/courses/655ede73581c57e28ca60fb8",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-11-23T04:55:59.348Z",
+            "modified": "2023-11-23T05:09:20.434Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a3f145d4-fb5e-43ab-8f94-e644ecdf9532",
+            "colId": "61bbb97b-c7a0-42a7-89ab-742e58a63161",
+            "containerId": "e1248c03-1983-4332-a376-1e083a3ec72c",
+            "name": "editar curso",
+            "url": "http://127.0.0.1:6000/api/v1/courses/655edf1b42ad9603aa10effe",
+            "method": "PUT",
+            "sortNum": 110000,
+            "created": "2023-11-23T04:56:20.700Z",
+            "modified": "2023-11-23T05:12:09.700Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n   \"title\":\"casa el dorado1111111111111111\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
